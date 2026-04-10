@@ -2,18 +2,18 @@
 ## Moonwell DeFi协议因AI生成代码逻辑错误损失178万美元(智能合约安全 对应报告5.2节)
 ### 
 2026年2月，DeFi借贷协议Moonwell因智能合约漏洞遭遇重创，损失高达178万美元。
-<img width="1080" height="362" alt="image" src="https://github.com/user-attachments/assets/4c934283-4536-4b8e-b710-dfffd2e6c989" />
+<img width="1080" height="362" alt="image" src="assets/1.webp" />
 
 这是业内首起由Vibe Coding（AI辅助编码）引发的链上安全事故，其核心是一个低级却致命的预言机配置漏洞，其中预言机是一种数据在被提交到区块链前的一种获取实时数据的工具。这一事件的根源在于Claude Opus 4.6版本编写的代码存在缺陷，导致项目中的cbETH价格被错误设置为1.12美元，而实际应为约2,200美元。此事件不仅暴露了智能合约审计的重要性，更引发了对“氛围编码（vibe-coding）”现象的关注。
 
-<img width="680" height="408" alt="image" src="https://github.com/user-attachments/assets/e04b1d54-b1d1-4907-9b96-e107e993f6c0" />
+<img width="680" height="408" alt="image" src="assets/2.webp" />
 
 
 智能合约在区块链技术中扮演着至关重要的角色，作为自动执行合约条款的代码，它的安全性直接关系到资金的安全。然而，Moonwell的这一事件提醒我们，即便是小小的编码失误，也可能导致巨大的财务损失。慢雾创始人余弦指出，此次事件是由于预言机喂价公式的低级错误引发的，这种错误的成本不仅仅是金钱，更多的是对项目信誉的损害。
 
 Claude Opus 4.6的代码提交显示了“氛围编码”的潜在风险。所谓“氛围编码”，是指在缺乏严谨审核的情况下，开发者凭借直觉和经验进行编码，这种方式虽然在某些情况下能快速推动项目进展，但同时也埋下了安全隐患。此次在AI工具Claude生成的代码中，由于缺乏完善的逻辑校验，误将cbETH的价格源直接指向了cbETHETH_ORACLE。该数据源仅能提供cbETH与ETH的“兑换汇率”（即1.12），却无法获取ETH的美元价格。
 
-<img width="500" height="352" alt="image" src="https://github.com/user-attachments/assets/9dbfa940-55d9-428a-8e18-349c33d5b5ee" />
+<img width="500" height="352" alt="image" src="assets/3.webp" />
 
 这个遗漏了关键乘法步骤的错误，导致程序直接将“汇率”视为了“美元价值”。原本价值2400多美元的资产，在系统中被错误地标记为1.12美元，严重低估了99.9%以上，价格相差近2000倍。
 
